@@ -1,26 +1,61 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <nav class="navbar">
+      <ul>
+        <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="/about">About</router-link></li>
+        <li><router-link to="/blog">Blog</router-link></li>
+        <li><router-link to="/contactus">Contact Us</router-link></li>
+      </ul>
+    </nav>
+    
+    <BlogComponent/>
+    <ContactComponent/>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import BlogComponent from './components/BlogComponent.vue';
+import ContactComponent from './components/ContactComponent.vue';
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    BlogComponent,
+    ContactComponent
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.navbar {
+  background-color:red;
+  color: #fff;
+  padding: 20px;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width:100%;
+margin-top:0;
 }
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar li {
+  margin-right: 20px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #cccccc;
+}
+
+
 </style>
